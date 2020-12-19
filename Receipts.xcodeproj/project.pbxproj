@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3220599258DD8B9005A135E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3220598258DD8B9005A135E /* HomeViewController.swift */; };
+		F322059F258DDDC0005A135E /* CategoryBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F322059E258DDDC0005A135E /* CategoryBox.swift */; };
 		F32F52AF258AECE30070EB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52AE258AECE20070EB76 /* AppDelegate.swift */; };
 		F32F52B1258AECE30070EB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52B0258AECE30070EB76 /* SceneDelegate.swift */; };
 		F32F52B3258AECE30070EB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52B2258AECE30070EB76 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3220598258DD8B9005A135E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F322059E258DDDC0005A135E /* CategoryBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBox.swift; sourceTree = "<group>"; };
 		F32F52AB258AECE20070EB76 /* Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Receipts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32F52AE258AECE20070EB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F32F52B0258AECE30070EB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3220595258DD882005A135E /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				F322059D258DDDA0005A135E /* UIElements */,
+				F3220597258DD892005A135E /* Home */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		F3220597258DD892005A135E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F3220598258DD8B9005A135E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F322059D258DDDA0005A135E /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				F322059E258DDDC0005A135E /* CategoryBox.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
 		F32F52A2258AECE20070EB76 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +130,7 @@
 		F32F52AD258AECE20070EB76 /* Receipts */ = {
 			isa = PBXGroup;
 			children = (
+				F3220595258DD882005A135E /* Scripts */,
 				F32F52AE258AECE20070EB76 /* AppDelegate.swift */,
 				F32F52B0258AECE30070EB76 /* SceneDelegate.swift */,
 				F32F52B2258AECE30070EB76 /* ViewController.swift */,
@@ -261,10 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3220599258DD8B9005A135E /* HomeViewController.swift in Sources */,
 				F32F52B9258AECE30070EB76 /* Receipts.xcdatamodeld in Sources */,
 				F32F52B3258AECE30070EB76 /* ViewController.swift in Sources */,
 				F32F52AF258AECE30070EB76 /* AppDelegate.swift in Sources */,
 				F32F52B1258AECE30070EB76 /* SceneDelegate.swift in Sources */,
+				F322059F258DDDC0005A135E /* CategoryBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
