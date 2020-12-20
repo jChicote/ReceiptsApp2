@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F305AE49258EFA98004AA8D5 /* CustomDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F305AE48258EFA98004AA8D5 /* CustomDataTypes.swift */; };
+		F305AE4F258EFC5E004AA8D5 /* TestDataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F305AE4E258EFC5E004AA8D5 /* TestDataObjects.swift */; };
+		F305AE57258F431C004AA8D5 /* RecentReceipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F305AE56258F431C004AA8D5 /* RecentReceipsCell.swift */; };
 		F3220599258DD8B9005A135E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3220598258DD8B9005A135E /* HomeViewController.swift */; };
 		F322059F258DDDC0005A135E /* CategoryBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F322059E258DDDC0005A135E /* CategoryBox.swift */; };
 		F32F52AF258AECE30070EB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52AE258AECE20070EB76 /* AppDelegate.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F305AE48258EFA98004AA8D5 /* CustomDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataTypes.swift; sourceTree = "<group>"; };
+		F305AE4E258EFC5E004AA8D5 /* TestDataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataObjects.swift; sourceTree = "<group>"; };
+		F305AE56258F431C004AA8D5 /* RecentReceipsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReceipsCell.swift; sourceTree = "<group>"; };
 		F3220598258DD8B9005A135E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F322059E258DDDC0005A135E /* CategoryBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBox.swift; sourceTree = "<group>"; };
 		F32F52AB258AECE20070EB76 /* Receipts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Receipts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F305AE47258EFA02004AA8D5 /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				F305AE48258EFA98004AA8D5 /* CustomDataTypes.swift */,
+				F305AE4E258EFC5E004AA8D5 /* TestDataObjects.swift */,
+			);
+			path = CustomObjects;
+			sourceTree = "<group>";
+		};
 		F3220595258DD882005A135E /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				F305AE47258EFA02004AA8D5 /* CustomObjects */,
 				F322059D258DDDA0005A135E /* UIElements */,
 				F3220597258DD892005A135E /* Home */,
 			);
@@ -103,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				F322059E258DDDC0005A135E /* CategoryBox.swift */,
+				F305AE56258F431C004AA8D5 /* RecentReceipsCell.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -291,9 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F305AE57258F431C004AA8D5 /* RecentReceipsCell.swift in Sources */,
 				F3220599258DD8B9005A135E /* HomeViewController.swift in Sources */,
 				F32F52B9258AECE30070EB76 /* Receipts.xcdatamodeld in Sources */,
 				F32F52B3258AECE30070EB76 /* ViewController.swift in Sources */,
+				F305AE49258EFA98004AA8D5 /* CustomDataTypes.swift in Sources */,
+				F305AE4F258EFC5E004AA8D5 /* TestDataObjects.swift in Sources */,
 				F32F52AF258AECE30070EB76 /* AppDelegate.swift in Sources */,
 				F32F52B1258AECE30070EB76 /* SceneDelegate.swift in Sources */,
 				F322059F258DDDC0005A135E /* CategoryBox.swift in Sources */,

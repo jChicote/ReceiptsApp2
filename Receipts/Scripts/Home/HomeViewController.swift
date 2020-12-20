@@ -8,18 +8,124 @@
 import Foundation
 import UIKit
 
-
-class HomeViewController : ViewController {
+class HomeViewController : ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
   
+  // Tables and Collection outlets
   @IBOutlet weak var categoryCollection: UICollectionView!
+  @IBOutlet weak var recentTable: UITableView!
   
-  let testCategories = ["Groceries", "Technology", "Item3", "Item4", "Item5", "Item6"]
+  // UIView related outlets
+  @IBOutlet weak var categorySectionView: UIView!
   
-  //  Initialises controller on view load
+  /// Initialises controller on view load
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    initialiseCategoryCollection()
+    initialiseRecentsTable()
   }
   
+  /// Initialises the category collection view elements
+  func initialiseCategoryCollection() {
+    // Allocate 'self' to collection view delegate and source
+    categoryCollection.delegate = self
+    categoryCollection.dataSource = self
+    
+    // Define base dimensions for collection layout
+    let width = view.frame.width * 0.4
+    let height = categorySectionView.frame.height * 0.55
+    
+    // Configure view collection layout
+    let layout = categoryCollection.collectionViewLayout as! UICollectionViewFlowLayout
+    layout.itemSize = CGSize(width: width, height: height)
+    layout.minimumInteritemSpacing = 20
+  }
   
+  func initialiseRecentsTable() {
+    recentTable.delegate = self
+    recentTable.dataSource = self
+    
+    
+  }
+  
+  @IBAction func onSettingsPressed(_ sender: Any) {
+    print("Has pressed settings")
+  }
+  
+  @IBAction func onSearchPressed(_ sender: Any) {
+    print("Has pressed search")
+  }
+}
+
+
+///
+///
+///
+///
+///
+extension HomeViewController {
+  // Defines the specified number of cells to be created
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 7 // TEST COUNT
+  }
+  
+  // Defines the height of etable cells
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return view.frame.size.height / 8
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let headerView = UIView()
+    headerView.backgroundColor = view.backgroundColor
+    return headerView
+  }
+  
+  // Creates the cell at index and populates data
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let cell = recentTable.dequeueReusableCell(withIdentifier: "RecentReceiptCell", for: indexPath) as! RecentReceiptsCell
+    // STUB TEST
+    return cell
+  }
+  
+  // Animates cell gradually throughout all cells
+  /*func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    cell.alpha = 0
+    UIView.animate(withDuration: 0.3, delay: 0.05 * Double(indexPath.row), animations: {
+      cell.alpha = 1
+    })
+  }*/
+  
+}
+
+
+///
+///
+///
+///
+///
+extension HomeViewController: CellDelegate {
+  
+  /// Returns integer of the number of items  to define for collection view
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return TestCategories.categories.count; //REMOVE TEST LATER
+  }
+  
+  /// Creates and returns the configured cell object from the specified cell item in the collectionview.
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    // Define cell characteristics and related data
+    let cell = categoryCollection.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryBox
+    cell.nameLabel.text = TestCategories.categories[indexPath.row].name
+    cell.cellDelegate = self
+    cell.layoutIfNeeded()
+    
+    return cell
+    
+  }
+  
+  /// Executes function when delegate is triggered
+  func didTapCell() {
+    print("Tapped Cell")
+  }
 }

@@ -8,6 +8,23 @@
 import Foundation
 import UIKit
 
-class CateogoryBox : UIView {
+protocol CellDelegate {
+  func didTapCell()
+}
+
+class CategoryBox : UICollectionViewCell {
+  
+  @IBOutlet weak var nameLabel: UILabel!
+  
+  var cellDelegate: CellDelegate?
+  
+  func configure() {
+    
+  }
+  
+  /// Loads view cell layout elements on load
+  override func layoutSubviews() {
+    super.layoutSubviews()
+  }
   
 }
