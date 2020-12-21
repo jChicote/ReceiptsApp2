@@ -38,15 +38,17 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
     // Configure view collection layout
     let layout = categoryCollection.collectionViewLayout as! UICollectionViewFlowLayout
     layout.itemSize = CGSize(width: width, height: height)
+    layout.minimumLineSpacing = 20
     layout.minimumInteritemSpacing = 20
   }
   
+  /// Initialises the recent receipts table view
   func initialiseRecentsTable() {
     recentTable.delegate = self
     recentTable.dataSource = self
-    
-    
   }
+  
+  /// --------------------------- Outlet Functions ------------------------------
   
   @IBAction func onSettingsPressed(_ sender: Any) {
     print("Has pressed settings")
@@ -58,9 +60,7 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
 }
 
 
-///
-///
-///
+/// Extension containing related methods to UITableView Delegate and Datasource methods.
 ///
 ///
 extension HomeViewController {
@@ -74,12 +74,6 @@ extension HomeViewController {
     return view.frame.size.height / 8
   }
   
-  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let headerView = UIView()
-    headerView.backgroundColor = view.backgroundColor
-    return headerView
-  }
-  
   // Creates the cell at index and populates data
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
@@ -89,19 +83,17 @@ extension HomeViewController {
   }
   
   // Animates cell gradually throughout all cells
-  /*func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     cell.alpha = 0
     UIView.animate(withDuration: 0.3, delay: 0.05 * Double(indexPath.row), animations: {
       cell.alpha = 1
     })
-  }*/
+  }
   
 }
 
 
-///
-///
-///
+/// Extension contains delegate and datasource methods for the Category Collection View UI
 ///
 ///
 extension HomeViewController: CellDelegate {
@@ -121,7 +113,6 @@ extension HomeViewController: CellDelegate {
     cell.layoutIfNeeded()
     
     return cell
-    
   }
   
   /// Executes function when delegate is triggered
