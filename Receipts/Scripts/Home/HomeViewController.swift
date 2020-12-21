@@ -28,7 +28,7 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    layoutBottomAppBar()
+    //layoutBottomAppBar()
   }
   
   /// Initialises the category collection view elements

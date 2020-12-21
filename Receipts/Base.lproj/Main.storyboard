@@ -223,22 +223,52 @@
                                     <constraint firstItem="dJS-FW-tSp" firstAttribute="centerX" secondItem="knK-9N-oMX" secondAttribute="centerX" id="yrA-VF-DLu"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-Ua-XEC" userLabel="BottomNavBar">
+                                <rect key="frame" x="0.0" y="788.5" width="414" height="107.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJS-H1-N2J" userLabel="NavContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-My-iCj">
+                                        <rect key="frame" x="165.5" y="-41.5" width="83" height="83"/>
+                                        <color key="backgroundColor" red="0.1693069036" green="0.64746291739999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yFm-My-iCj" secondAttribute="height" multiplier="1:1" id="S2D-OU-rv2"/>
+                                        </constraints>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="gJS-H1-N2J" firstAttribute="top" secondItem="rz1-Ua-XEC" secondAttribute="top" id="A3T-4v-XvU"/>
+                                    <constraint firstAttribute="trailing" secondItem="gJS-H1-N2J" secondAttribute="trailing" id="OTc-xY-Xro"/>
+                                    <constraint firstItem="yFm-My-iCj" firstAttribute="centerX" secondItem="rz1-Ua-XEC" secondAttribute="centerX" id="Rym-yn-hIx"/>
+                                    <constraint firstItem="gJS-H1-N2J" firstAttribute="leading" secondItem="rz1-Ua-XEC" secondAttribute="leading" id="eo3-fo-qmP"/>
+                                    <constraint firstItem="yFm-My-iCj" firstAttribute="width" secondItem="rz1-Ua-XEC" secondAttribute="width" multiplier="0.2" id="yt3-8F-VgM"/>
+                                    <constraint firstItem="yFm-My-iCj" firstAttribute="centerY" secondItem="rz1-Ua-XEC" secondAttribute="top" id="zfa-9f-PCz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rz1-Ua-XEC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Xd-Ap-9VC"/>
                             <constraint firstItem="yRy-pc-qZA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="31p-Bc-q2k"/>
                             <constraint firstItem="yRy-pc-qZA" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="9V7-Zt-itL"/>
                             <constraint firstItem="knK-9N-oMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AIx-vp-xES"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="knK-9N-oMX" secondAttribute="trailing" id="JnP-6R-QiH"/>
+                            <constraint firstItem="gJS-H1-N2J" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qwf-B7-LKV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="knK-9N-oMX" secondAttribute="bottom" id="RcP-pP-jff"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rz1-Ua-XEC" secondAttribute="trailing" id="UN3-I0-CiW"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a9K-X3-ehC"/>
+                            <constraint firstItem="rz1-Ua-XEC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.12" id="cwV-hl-RfC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yRy-pc-qZA" secondAttribute="trailing" id="e8h-BQ-ikK"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="top" secondItem="yRy-pc-qZA" secondAttribute="bottom" id="hfS-X0-klH"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.3" id="hvW-Tp-HHQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z8R-NI-rEk" secondAttribute="trailing" id="jYe-04-YLm"/>
                             <constraint firstItem="yRy-pc-qZA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pCR-gS-eEv"/>
                             <constraint firstItem="knK-9N-oMX" firstAttribute="top" secondItem="z8R-NI-rEk" secondAttribute="bottom" id="tK2-Hw-ScT"/>
+                            <constraint firstAttribute="bottom" secondItem="rz1-Ua-XEC" secondAttribute="bottom" id="whA-ZD-Axk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -257,6 +287,9 @@
         <image name="settings-icon" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
