@@ -1,0 +1,6 @@
+framework module Pods_Receipts_ReceiptsUITests {
+  umbrella header "Pods-Receipts-ReceiptsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

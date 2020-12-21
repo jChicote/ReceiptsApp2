@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MaterialComponents.MaterialBottomAppBar
 
 class HomeViewController : ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
   
@@ -23,6 +24,11 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
     
     initialiseCategoryCollection()
     initialiseRecentsTable()
+  }
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    layoutBottomAppBar()
   }
   
   /// Initialises the category collection view elements
@@ -46,6 +52,14 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   func initialiseRecentsTable() {
     recentTable.delegate = self
     recentTable.dataSource = self
+  }
+  
+  func layoutBottomAppBar() {
+    let bottomAppBar = MDCBottomAppBarView()
+    view.addSubview(bottomAppBar)
+    view.leftAnchor.constraint(equalTo: bottomAppBar.leftAnchor).isActive = true
+    view.rightAnchor.constraint(equalTo: bottomAppBar.rightAnchor).isActive = true
+    view.bottomAnchor.constraint(equalTo: bottomAppBar.bottomAnchor).isActive = true
   }
   
   /// --------------------------- Outlet Functions ------------------------------
