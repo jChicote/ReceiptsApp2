@@ -18,6 +18,10 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   // UIView related outlets
   @IBOutlet weak var categorySectionView: UIView!
   
+  // Interactive related outlets
+  @IBOutlet weak var bottomNavExpandable: UIButton!
+  
+  
   /// Initialises controller on view load
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,7 +32,7 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    //layoutBottomAppBar()
+    layoutBottomAppBar()
   }
   
   /// Initialises the category collection view elements
@@ -55,11 +59,6 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   }
   
   func layoutBottomAppBar() {
-    let bottomAppBar = MDCBottomAppBarView()
-    view.addSubview(bottomAppBar)
-    view.leftAnchor.constraint(equalTo: bottomAppBar.leftAnchor).isActive = true
-    view.rightAnchor.constraint(equalTo: bottomAppBar.rightAnchor).isActive = true
-    view.bottomAnchor.constraint(equalTo: bottomAppBar.bottomAnchor).isActive = true
   }
   
   /// --------------------------- Outlet Functions ------------------------------
@@ -83,7 +82,7 @@ extension HomeViewController {
     return 7 // TEST COUNT
   }
   
-  // Defines the height of etable cells
+  // Defines the height of table cells
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return view.frame.size.height / 8
   }
