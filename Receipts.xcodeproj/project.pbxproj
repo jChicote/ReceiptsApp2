@@ -24,6 +24,8 @@
 		F32F52BE258AECE50070EB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32F52BC258AECE50070EB76 /* LaunchScreen.storyboard */; };
 		F32F52C9258AECE60070EB76 /* ReceiptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52C8258AECE60070EB76 /* ReceiptsTests.swift */; };
 		F32F52D4258AECE60070EB76 /* ReceiptsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F52D3258AECE60070EB76 /* ReceiptsUITests.swift */; };
+		F37D6358259495840009DD5C /* BottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D6357259495840009DD5C /* BottomNavigationView.swift */; };
+		F37D635E259B0B7C0009DD5C /* ReceiptModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37D635D259B0B7C0009DD5C /* ReceiptModelService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		F32F52CF258AECE60070EB76 /* ReceiptsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32F52D3258AECE60070EB76 /* ReceiptsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsUITests.swift; sourceTree = "<group>"; };
 		F32F52D5258AECE60070EB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F37D6357259495840009DD5C /* BottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationView.swift; sourceTree = "<group>"; };
+		F37D635D259B0B7C0009DD5C /* ReceiptModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptModelService.swift; sourceTree = "<group>"; };
 		F45667A9211AE625293D4AC9 /* Pods_ReceiptsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,7 @@
 		F3220595258DD882005A135E /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				F37D635C259B005D0009DD5C /* Model */,
 				F305AE47258EFA02004AA8D5 /* CustomObjects */,
 				F322059D258DDDA0005A135E /* UIElements */,
 				F3220597258DD892005A135E /* Home */,
@@ -158,6 +163,7 @@
 			children = (
 				F322059E258DDDC0005A135E /* CategoryBox.swift */,
 				F305AE56258F431C004AA8D5 /* RecentReceipsCell.swift */,
+				F37D6357259495840009DD5C /* BottomNavigationView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -216,6 +222,14 @@
 				F32F52D5258AECE60070EB76 /* Info.plist */,
 			);
 			path = ReceiptsUITests;
+			sourceTree = "<group>";
+		};
+		F37D635C259B005D0009DD5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F37D635D259B0B7C0009DD5C /* ReceiptModelService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37D635E259B0B7C0009DD5C /* ReceiptModelService.swift in Sources */,
 				F305AE57258F431C004AA8D5 /* RecentReceipsCell.swift in Sources */,
 				F3220599258DD8B9005A135E /* HomeViewController.swift in Sources */,
 				F32F52B9258AECE30070EB76 /* Receipts.xcdatamodeld in Sources */,
@@ -463,6 +478,7 @@
 				F305AE49258EFA98004AA8D5 /* CustomDataTypes.swift in Sources */,
 				F305AE4F258EFC5E004AA8D5 /* TestDataObjects.swift in Sources */,
 				F32F52AF258AECE30070EB76 /* AppDelegate.swift in Sources */,
+				F37D6358259495840009DD5C /* BottomNavigationView.swift in Sources */,
 				F32F52B1258AECE30070EB76 /* SceneDelegate.swift in Sources */,
 				F322059F258DDDC0005A135E /* CategoryBox.swift in Sources */,
 			);

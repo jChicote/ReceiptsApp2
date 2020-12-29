@@ -223,15 +223,44 @@
                                     <constraint firstItem="dJS-FW-tSp" firstAttribute="centerX" secondItem="knK-9N-oMX" secondAttribute="centerX" id="yrA-VF-DLu"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-Ua-XEC" userLabel="BottomNavBar">
-                                <rect key="frame" x="0.0" y="770.5" width="414" height="125.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-Ua-XEC" userLabel="BottomNavBar" customClass="BottomNavigationView" customModule="Receipts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJS-H1-N2J" userLabel="NavContentView">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="95.5"/>
+                                        <rect key="frame" x="0.0" y="348" width="414" height="100"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="fUc-Xp-hQQ"/>
+                                        </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m62-8L-lWg" userLabel="Import Button">
+                                        <rect key="frame" x="165.5" y="306.5" width="83" height="83"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="m62-8L-lWg" secondAttribute="height" multiplier="1:1" id="vct-oc-2HP"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.0" green="0.29567186090000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                        <state key="normal" image="filled-import" backgroundImage="filled-circle"/>
+                                        <connections>
+                                            <action selector="touchImportButton:" destination="rz1-Ua-XEC" eventType="touchUpInside" id="K0d-Y9-bso"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPy-47-yNo" userLabel="Camera Button">
+                                        <rect key="frame" x="165.5" y="306.5" width="83" height="83"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NPy-47-yNo" secondAttribute="height" multiplier="1:1" id="esJ-6R-lM6"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.95234469590000004" green="0.2999971347" blue="0.28087884299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                        <state key="normal" image="filled-camera" backgroundImage="filled-circle"/>
+                                        <connections>
+                                            <action selector="touchCameraButton:" destination="rz1-Ua-XEC" eventType="touchUpInside" id="en1-Ue-R03"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-My-iCj">
-                                        <rect key="frame" x="165.5" y="0.0" width="83" height="83"/>
+                                        <rect key="frame" x="165.5" y="306.5" width="83" height="83"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yFm-My-iCj" secondAttribute="height" multiplier="1:1" id="S2D-OU-rv2"/>
@@ -239,27 +268,83 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                         <state key="normal" image="thin-plus" backgroundImage="filled-circle"/>
+                                        <connections>
+                                            <action selector="touchExpandableButton:" destination="rz1-Ua-XEC" eventType="touchUpInside" id="m2S-Za-hlG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ki-hZp" userLabel="Home Button">
-                                        <rect key="frame" x="184" y="47.5" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIu-Ac-lcs" userLabel="Files Button">
-                                        <rect key="frame" x="184" y="47.5" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTp-QS-QOQ" userLabel="Home-Area">
+                                        <rect key="frame" x="0.0" y="348" width="157" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-ki-hZp" userLabel="Home Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="66"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="touchHomeButton:" destination="rz1-Ua-XEC" eventType="touchUpInside" id="6jB-qd-zpC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="MUq-ki-hZp" firstAttribute="top" secondItem="tTp-QS-QOQ" secondAttribute="top" id="8it-yW-hpd"/>
+                                            <constraint firstAttribute="trailing" secondItem="MUq-ki-hZp" secondAttribute="trailing" id="ENq-D2-JOV"/>
+                                            <constraint firstAttribute="bottom" secondItem="MUq-ki-hZp" secondAttribute="bottom" id="TIg-M3-pdS"/>
+                                            <constraint firstItem="MUq-ki-hZp" firstAttribute="leading" secondItem="tTp-QS-QOQ" secondAttribute="leading" id="eTR-hK-HMQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-Gf-ynz" userLabel="Files-Area">
+                                        <rect key="frame" x="257" y="348" width="157" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIu-Ac-lcs" userLabel="Files Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="66"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="touchFilesButton:" destination="rz1-Ua-XEC" eventType="touchUpInside" id="sVq-Be-L3A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="qIu-Ac-lcs" secondAttribute="bottom" id="2ea-Ai-4hZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="qIu-Ac-lcs" secondAttribute="trailing" id="ew2-NE-xhP"/>
+                                            <constraint firstItem="qIu-Ac-lcs" firstAttribute="leading" secondItem="5GE-Gf-ynz" secondAttribute="leading" id="gv7-hQ-72q"/>
+                                            <constraint firstItem="qIu-Ac-lcs" firstAttribute="top" secondItem="5GE-Gf-ynz" secondAttribute="top" id="rpF-Kp-pQQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="gJS-H1-N2J" firstAttribute="top" secondItem="rz1-Ua-XEC" secondAttribute="top" constant="30" id="A3T-4v-XvU"/>
+                                    <constraint firstItem="NPy-47-yNo" firstAttribute="width" secondItem="yFm-My-iCj" secondAttribute="width" id="2Rk-Jo-7QR"/>
+                                    <constraint firstItem="m62-8L-lWg" firstAttribute="width" secondItem="yFm-My-iCj" secondAttribute="width" id="2wP-oM-Sjm"/>
+                                    <constraint firstItem="tTp-QS-QOQ" firstAttribute="leading" secondItem="rz1-Ua-XEC" secondAttribute="leading" id="DWf-8v-SfU"/>
+                                    <constraint firstItem="NPy-47-yNo" firstAttribute="centerY" secondItem="yFm-My-iCj" secondAttribute="centerY" id="MIK-of-HO7"/>
                                     <constraint firstAttribute="trailing" secondItem="gJS-H1-N2J" secondAttribute="trailing" id="OTc-xY-Xro"/>
+                                    <constraint firstItem="m62-8L-lWg" firstAttribute="centerX" secondItem="yFm-My-iCj" secondAttribute="centerX" id="PEP-pA-Kkt"/>
                                     <constraint firstItem="yFm-My-iCj" firstAttribute="centerX" secondItem="rz1-Ua-XEC" secondAttribute="centerX" id="Rym-yn-hIx"/>
                                     <constraint firstItem="gJS-H1-N2J" firstAttribute="leading" secondItem="rz1-Ua-XEC" secondAttribute="leading" id="eo3-fo-qmP"/>
+                                    <constraint firstAttribute="centerX" secondItem="tTp-QS-QOQ" secondAttribute="trailing" constant="50" id="kre-Rm-TA0"/>
+                                    <constraint firstItem="5GE-Gf-ynz" firstAttribute="leading" secondItem="gJS-H1-N2J" secondAttribute="centerX" constant="50" id="qF4-4d-aID"/>
+                                    <constraint firstItem="NPy-47-yNo" firstAttribute="centerX" secondItem="yFm-My-iCj" secondAttribute="centerX" id="sEm-T2-DIt"/>
+                                    <constraint firstItem="5GE-Gf-ynz" firstAttribute="trailing" secondItem="gJS-H1-N2J" secondAttribute="trailing" id="vW7-fL-x3d"/>
+                                    <constraint firstItem="5GE-Gf-ynz" firstAttribute="top" secondItem="gJS-H1-N2J" secondAttribute="top" id="vrF-cC-Xl8"/>
+                                    <constraint firstItem="tTp-QS-QOQ" firstAttribute="top" secondItem="gJS-H1-N2J" secondAttribute="top" id="weX-MK-yIr"/>
                                     <constraint firstItem="yFm-My-iCj" firstAttribute="width" secondItem="rz1-Ua-XEC" secondAttribute="width" multiplier="0.2" id="yt3-8F-VgM"/>
-                                    <constraint firstItem="yFm-My-iCj" firstAttribute="top" secondItem="rz1-Ua-XEC" secondAttribute="top" id="zfa-9f-PCz"/>
+                                    <constraint firstItem="m62-8L-lWg" firstAttribute="centerY" secondItem="yFm-My-iCj" secondAttribute="centerY" id="zOm-W7-SP2"/>
+                                    <constraint firstItem="yFm-My-iCj" firstAttribute="centerY" secondItem="gJS-H1-N2J" secondAttribute="top" id="zfa-9f-PCz"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="cameraAlignX" destination="sEm-T2-DIt" id="Gek-4t-klu"/>
+                                    <outlet property="cameraAlignY" destination="MIK-of-HO7" id="RCB-O8-i7t"/>
+                                    <outlet property="cameraButton" destination="NPy-47-yNo" id="Y0g-lP-U5R"/>
+                                    <outlet property="expandButton" destination="yFm-My-iCj" id="YgL-FZ-PaJ"/>
+                                    <outlet property="filesButton" destination="qIu-Ac-lcs" id="yUi-Y1-Q1h"/>
+                                    <outlet property="homeButton" destination="MUq-ki-hZp" id="N1l-5r-fzF"/>
+                                    <outlet property="importAlignX" destination="PEP-pA-Kkt" id="TfJ-7y-i8C"/>
+                                    <outlet property="importAlignY" destination="zOm-W7-SP2" id="87d-3l-p8y"/>
+                                    <outlet property="importButton" destination="m62-8L-lWg" id="0Ms-rC-e6c"/>
+                                    <outlet property="navContentHeight" destination="fUc-Xp-hQQ" id="0Ei-OK-bhX"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -270,10 +355,12 @@
                             <constraint firstItem="yRy-pc-qZA" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="9V7-Zt-itL"/>
                             <constraint firstItem="knK-9N-oMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AIx-vp-xES"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="knK-9N-oMX" secondAttribute="trailing" id="JnP-6R-QiH"/>
+                            <constraint firstItem="5GE-Gf-ynz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="N7b-P7-DeY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="knK-9N-oMX" secondAttribute="bottom" id="RcP-pP-jff"/>
+                            <constraint firstItem="tTp-QS-QOQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UEZ-Ob-irG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rz1-Ua-XEC" secondAttribute="trailing" id="UN3-I0-CiW"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a9K-X3-ehC"/>
-                            <constraint firstItem="rz1-Ua-XEC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.14" id="cwV-hl-RfC"/>
+                            <constraint firstItem="rz1-Ua-XEC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="cwV-hl-RfC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yRy-pc-qZA" secondAttribute="trailing" id="e8h-BQ-ikK"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="top" secondItem="yRy-pc-qZA" secondAttribute="bottom" id="hfS-X0-klH"/>
                             <constraint firstItem="z8R-NI-rEk" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.3" id="hvW-Tp-HHQ"/>
@@ -285,7 +372,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomNavExpandable" destination="yFm-My-iCj" id="1zE-qQ-35y"/>
+                        <outlet property="bottomNavigationBar" destination="rz1-Ua-XEC" id="pcY-3G-blQ"/>
                         <outlet property="categoryCollection" destination="sPp-x8-NId" id="x7h-41-rPG"/>
                         <outlet property="categorySectionView" destination="z8R-NI-rEk" id="hNc-Kw-eh6"/>
                         <outlet property="recentTable" destination="dJS-FW-tSp" id="TFf-Mk-gKh"/>
@@ -297,7 +384,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="filled-camera" width="96" height="96"/>
         <image name="filled-circle" width="100" height="100"/>
+        <image name="filled-import" width="100" height="100"/>
         <image name="search-icon" width="100" height="100"/>
         <image name="settings-icon" width="100" height="100"/>
         <image name="thin-plus" width="96" height="96"/>

@@ -18,25 +18,26 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   // UIView related outlets
   @IBOutlet weak var categorySectionView: UIView!
   
-  // Interactive related outlets
-  @IBOutlet weak var bottomNavExpandable: UIButton!
+  // Bottom Navigation Bar
+  @IBOutlet weak var bottomNavigationBar: BottomNavigationView!
   
   
   /// Initialises controller on view load
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    print("Made it here")
     initialiseCategoryCollection()
     initialiseRecentsTable()
+    layoutBottomAppBar()
   }
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    layoutBottomAppBar()
+    //layoutBottomAppBar()
   }
   
   /// Initialises the category collection view elements
-  func initialiseCategoryCollection() {
+  private func initialiseCategoryCollection() {
     // Allocate 'self' to collection view delegate and source
     categoryCollection.delegate = self
     categoryCollection.dataSource = self
@@ -53,12 +54,14 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
   }
   
   /// Initialises the recent receipts table view
-  func initialiseRecentsTable() {
+  private func initialiseRecentsTable() {
     recentTable.delegate = self
     recentTable.dataSource = self
   }
   
-  func layoutBottomAppBar() {
+  private func layoutBottomAppBar() {
+    bottomNavigationBar.navDelegate = self
+    print("Loaded delegate")
   }
   
   /// --------------------------- Outlet Functions ------------------------------
@@ -74,7 +77,6 @@ class HomeViewController : ViewController, UICollectionViewDelegate, UICollectio
 
 
 /// Extension containing related methods to UITableView Delegate and Datasource methods.
-///
 ///
 extension HomeViewController {
   // Defines the specified number of cells to be created
@@ -131,5 +133,23 @@ extension HomeViewController: CellDelegate {
   /// Executes function when delegate is triggered
   func didTapCell() {
     print("Tapped Cell")
+  }
+}
+
+extension HomeViewController : BottomNavDelegate {
+  func TapHome() {
+    print("Tapped on Home")
+  }
+  
+  func TapFiles() {
+    print("Tapped on Files")
+  }
+  
+  func TapCamera() {
+    print("Tapped on Camera")
+  }
+  
+  func TapImport() {
+    print("Tapped on Import")
   }
 }
